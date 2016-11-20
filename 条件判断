@@ -211,9 +211,4 @@ ValueError: invalid literal for int() with base 10: 'abc'
 条件判断可以让计算机自己做选择，Python的if...elif...else很灵活。
 
 
-
-循环是让计算机做重复任务的有效的方法，有些时候，如果代码写得有问题，会让程序陷入“死循环”，也就是永远循环下去。这时可以用Ctrl+C退出程序，或者强制结束Python进程。
-
-请试写一个死循环程序。
-
 一无所知的世界走下去才会有惊喜 It will be a surprise right know nothing about the world
