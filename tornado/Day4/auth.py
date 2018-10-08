@@ -44,7 +44,7 @@ class LoginHandler(BaseHandler):
                    '</form></body></html>')
 
     def post(self, *args, **kwargs):
-        self.get_secure_cookie('user', self.get_argument('name'))
+        self.set_secure_cookie('user', self.get_argument('name'))
         self.redirect('/')
 
 class Application(tornado.web.Application):
