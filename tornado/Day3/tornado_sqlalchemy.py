@@ -37,6 +37,6 @@ class User(Base):
 engine = create_engine('mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(USER, PASSWD, HOST, PORT, DB_NAME))
 # 创建DBSession类型:
 DBSession = sessionmaker(bind=engine)
-
+Base.metadata.create_all(engine)  #创建表的语句 第一次使用
 
 
