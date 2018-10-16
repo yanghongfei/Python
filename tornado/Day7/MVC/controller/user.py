@@ -44,6 +44,11 @@ class LoginHandler(BaseHandler):
         else:
             return self.write(dict(status=-10, msg='用户密码错误'))
 
+class LogoutHandler(BaseHandler):
+    def post(self):
+        if (self.get_argument('logout', None)):
+            self.clear_cookie('username')
+        self.redirect('/')
 
 class AddUserHandler(BaseHandler):
     def get(self, *args, **kwargs):
