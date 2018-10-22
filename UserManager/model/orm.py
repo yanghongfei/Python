@@ -112,9 +112,9 @@ class UserManagerORM():
 
 
 class GoogleAuth():
-    def __init__(self, username, secert_key):
+    def __init__(self, username, secret_key):
         self.username = username
-        self.secert_key = secert_key
+        self.secret_key = secret_key
 
 class GoogleAuthORM():
     def __init__(self):
@@ -130,11 +130,18 @@ class GoogleAuthORM():
         self.session = self.Session()
 
 
-    def create_user(self,user_info):
+    def create_user(self, user_info):
+        """
+        新建用户
+        :param user_info:  列表
+        :return:
+        """
+
         new_user = GoogleAuth(
             user_info['username'],
             user_info['secret_key']
         )
+        print(user_info)
         self.session.add(new_user)
         self.session.commit()
         self.session.close()
@@ -143,19 +150,19 @@ class GoogleAuthORM():
         """
         :return:  获取所有用户信息
         """
-        return self.session.query(User)
+        return self.session.query(GoogleAuth)
 
     def get_username(self, username):
         """
         :param username: 根据用户名返回信息
         :return:
         """
-        return self.session.query(User).filter(User.username == username).first()
+        return self.session.query(GoogleAuth).filter(GoogleAuth.username == username).first()
 
     def get_user_secret_key(self, username):
         """
         :param username: 根据用户名返回密码
         :return:
         """
-        res = self.session.query(User).filter(User.username == username).first()
+        res = self.session.query(GoogleAuth).filter(GoogleAuth.username == username).first()
         return res.secret_key

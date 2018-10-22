@@ -1,0 +1,25 @@
+<html>
+<head>
+    <!--user_info是一个对象，user_name则是该对象的一个属性-->
+    <title>Edit Info for User: {{user_info.username}}</title>
+</head>
+<body>
+<h1>Edit User Info</h1>
+<hr/>
+<center>
+    <!--以POST方式将修改后的信息提交到UpdateUserInfo-->
+    <form name = 'edit_user_info' action = 'UpdateUserInfo' method = 'post' >
+            {% raw xsrf_form_html() %}
+            Name: <input type = 'text' name = 'username' value = {{user_info.username }} readonly/>
+            Age: <input type = 'text' name = 'age' value = {{user_info.age }} />
+            Sex: <input type = 'text' name = 'sex' value = {{user_info.sex }} />
+            Score: <input type = 'text' name = 'score' value = {{user_info.score }} />
+            Subject: <input type = 'text' name = 'subject' value = {{user_info.subject }} />
+            Password: <input type="password" name="password" value={{ user_info.password }} />
+            <input type = 'submit' value = 'Submit' />
+            <input type = 'Reset' value = 'Reset' />
+    </form>
+</center>
+<hr/>
+</body>
+</html>

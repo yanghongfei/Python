@@ -11,38 +11,45 @@ import os, sys
 import json
 import tornado.web
 
-Base_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+Base_DIR = os.path.dirname(os.path.dirname(os.path.abspath('__file__')))
 sys.path.append(Base_DIR)
 from UserManager.model import orm
 from UserManager.utils.public import *
+from UserManager.utils.google_auth import GoogleUserAuth
 
 # 全局ORM对象
-user_orm = orm.UserManagerORM()
+user_orm = orm.UserManagerORM()   #User表，记录帐号密码等信息
 
+mfa_auth = GoogleUserAuth()       #GoogleAuth类
 
 class LoginHandler(BaseHandler):
+    """
+    登陆两步验证，验证加密后的账户密码+Google Auth动态口令
+    """
     def get(self):
         self.render('login.html')
 
     def post(self):
         username = self.get_argument('username')
         password = self.get_argument('password')
+        MFA = self.get_argument('mfa')
 
-        if not username or not password:
-            return self.write(dict(status=-1, msg='用户密码不能为空'))
+        if not username or not password or not MFA:
+            return self.write(dict(status=-1, msg='参数不能为空'))
 
         if not user_orm.get_username(username):
             return self.write(dict(status=-10, msg='用户名不存在'))
 
         md5_password = md5_passwd(password)
-        # print('password----->', md5_password)
-        # print('1111----->',user_orm.get_user_password(username))
-
         if user_orm.get_user_password(username) == md5_password:
-            self.set_secure_cookie('username', self.get_argument('username'))
-            self.redirect('/')
+            #获取用户key 和动态口令进行验证
+            if mfa_auth.google_verify_result(username,MFA):  #认证，正确返回True
+                self.set_secure_cookie('username', self.get_argument('username'))
+                self.redirect('/')
+            else:
+                self.write(dict(status=-9, msg='MFA ERROR'))
         else:
-            return self.write(dict(status=-10, msg='用户密码错误'))
+            return self.write(dict(status=-10, msg='用户密码/MFA错误'))
 
 class LogoutHandler(BaseHandler):
     def post(self):

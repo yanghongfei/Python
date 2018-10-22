@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Please Log In</title>
+    </head>
+
+    <body>
+
+    <center><h2>Please input you's Administrator Account! </h2></center>
+    <center>
+        <form action="/login" method="POST">
+            {% raw xsrf_form_html() %}
+            Username: <input type="text" name="username" />
+            Password: <input type="password" name="password">
+            MFA: <input type="text" name="mfa" />
+            <input type="submit" value="Log In" />
+        </form>
+    </center>
+    </body>
+</html>
