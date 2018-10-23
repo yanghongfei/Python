@@ -11,7 +11,7 @@ Welcome to yanghongfei's documentation!
    :caption: Contents:
    
    ReadtheDocs
-
+   ops
 
 Indices and tables
 ==================
