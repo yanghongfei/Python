@@ -32,9 +32,9 @@ CREATE TABLE `event_reminder` (
 ```python
 # Body内容,根据name判断
 {
-	"name": "Ec2",   #名字
+    "name": "Ec2",   #名字
     "content": "服务器到期提醒",  #内容备注
-    "email": "yanghongfei@shinezone.com, ops@shinezone.com", #Email通知
+    "email": "yanghongfei@qq.com, group@qq.com", #Email通知
     "advance_at": "100",  #提前多少天
     "expire_at": "2018-11-30"  #到期时间
 }
