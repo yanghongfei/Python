@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>{{title}}</title>
+<body>
+<center><h1>Welcome to EventRemind Manager</h1></center>
+<hr/>
+<center>
+<hr/>
+<table border = 1>
+        <tr style = 'font-weight:bold' align = 'center'>
+                <td width = '200' >提醒名称</td>
+                <td width = '200' >提醒内容</td>
+                <td width = '100' >提醒人员(email)</td>
+                <td width = '100' >提前时间(天)</td>
+                <td width = '100' >过期时间</td>
+
+
+        </tr>
+
+        {% for event in events %}
+        <tr align = 'center'>
+                <!--user.user_name即是用户名。下同-->
+                <td>{{ event.name }}</td>
+                <td>{{ event.content }}</td>
+                <td>{{ event.email }}</td>
+                <td>{{ event.advance_at }}</td>
+                <td>{{ event.expire_at }}</td>
+        </tr>
+        <!--for循环结束-->
+        {% end %}
+</table>
+</center>
+</body
+</html>

@@ -1,0 +1,6 @@
+[program:event_reminder]
+directory=/opt/Python/TimedTask
+command=python3 /opt/Python/TimedTask/event_task.py
+autorestart=true
+autostart=true
+logfile=/tmp/event_tasks.log

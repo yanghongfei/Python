@@ -1,0 +1,8 @@
+[2018-10-29 15:40:48,614] - event_task.py - [line:70] - [INFO]: EventReminder Name:域名, EventReminder Content:shinezone.net.cn到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:40:48.614019
+[2018-10-29 15:40:50,418] - event_task.py - [line:70] - [INFO]: EventReminder Name:服务器, EventReminder Content:服务器到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:40:50.417946
+[2018-10-29 15:40:58,614] - event_task.py - [line:70] - [INFO]: EventReminder Name:域名, EventReminder Content:shinezone.net.cn到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:40:58.614230
+[2018-10-29 15:41:05,745] - event_task.py - [line:70] - [INFO]: EventReminder Name:服务器, EventReminder Content:服务器到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:41:05.745018
+[2018-10-29 15:41:08,610] - event_task.py - [line:70] - [INFO]: EventReminder Name:域名, EventReminder Content:shinezone.net.cn到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:41:08.610885
+[2018-10-29 15:41:10,444] - event_task.py - [line:70] - [INFO]: EventReminder Name:服务器, EventReminder Content:服务器到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:41:10.444010
+[2018-10-29 15:41:18,611] - event_task.py - [line:70] - [INFO]: EventReminder Name:域名, EventReminder Content:shinezone.net.cn到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:41:18.610961
+[2018-10-29 15:41:20,810] - event_task.py - [line:70] - [INFO]: EventReminder Name:服务器, EventReminder Content:服务器到期提醒, EventReminder Email：yanghongfei@shinezone.com, EventReminder Time: 2018-10-29 15:41:20.810071
