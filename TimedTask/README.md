@@ -40,3 +40,37 @@ CREATE TABLE `event_reminder` (
 }
 ```
 
+#### 守护进程
+- Supervisor安装
+```bash
+$ sudo pip install supervisor 
+$ sudo echo_supervisord_conf > /etc/supervisord.conf
+$ mkdir -p /etc/supervisor/conf.d
+```
+- 创建守护文件
+```bash
+cat > /etc/supervisor/conf.d/event_reminder.conf <<EOF
+[program:event_reminder]
+directory=/opt/Python/TimedTask
+command=python3 /opt/Python/TimedTask/event_task.py
+autorestart=true
+autostart=true
+logfile=/tmp/event_tasks.log
+EOF
+```
+- 修改配置文件  
+
+```bash
+$ tail -n 3 /etc/supervisord.conf 
+
+[include]
+files = /etc/supervisor/conf.d/*.conf
+```
+- 启动
+```bash
+$ supervisord
+$ supervisorctl 
+event_reminder                   RUNNING   pid 12659, uptime 2:58:43
+```
+
+
