@@ -11,6 +11,7 @@ Welcome to yanghongfei's documentation!
    :caption: Contents:
    
    ReadtheDocs
+   user_guide
 
 Indices and tables
 ==================

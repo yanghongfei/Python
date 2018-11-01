@@ -1,4 +1,4 @@
-# ReadtheDocs Install
+# 安装文档
 > Read the Docs是一个在线文档托管服务， 你可以从各种版本控制系统中导入文档，如果你使用webhooks， 那么每次提交代码后可以自动构建并上传至readthedocs网站，非常方便。
 
 ## 电子书写作方式
@@ -13,12 +13,12 @@
 > Sphinx是一个基于Python的文档生成项目，最早只是用来生成 Python 官方文档，随着工具的完善， 越来越多的知名的项目也用他来生成文档，甚至完全可以用他来写书采用了reStructuredText作为文档写作语言, 不过也可以通过模块支持其他格式，待会我会介绍怎样支持MarkDown格式
 
 ### 1.2 安装Sphinx
-```shell
+```
 $ pip install sphinx sphinx-autobuild sphinx_rtd_theme
 ```
 
 ### 1.3 初始化
-```shell
+```
 $ mkdir -p /opt/ReadtheDocs
 $ cd /opt/ReadtheDocs
 # 执行sphinx-quickstart
@@ -38,13 +38,13 @@ $ tree -C .
 
 ```
 ### 1.4 添加文章
-```shell
+```
    #文章可以使用markdown/rst格式
    vim source/hello.rst
    hello, world
 ```
 ### 1.5 修改index
-```shell
+```
 
   $ vim source/index.rst
     Welcome to docs's documentation!
@@ -68,7 +68,7 @@ $ tree -C .
 
 ### 1.6 修改配置
 
-```python
+```
 $ vim source/config.py
 #更改主题为sphinx_rtd_theme
 import sphinx_rtd_theme
@@ -123,12 +123,12 @@ $ make html  #会在bulid下生成html文件
 > Sphinx是一个基于Python的文档生成项目，最早只是用来生成 Python 官方文档，随着工具的完善， 越来越多的知名的项目也用他来生成文档，甚至完全可以用他来写书采用了reStructuredText作为文档写作语言, 不过也可以通过模块支持其他格式，待会我会介绍怎样支持MarkDown格式
 
 ### 2.2 安装Sphinx
-```shell
+```
 $ pip install sphinx sphinx-autobuild sphinx_rtd_theme
 ```
 
 ### 1.3 初始化
-```shell
+```
 $ mkdir -p /opt/ReadtheDocs
 $ cd /opt/ReadtheDocs
 # 执行sphinx-quickstart
@@ -148,13 +148,13 @@ $ tree -C .
 
 ```
 ### 1.4 添加文章
-```shell
+```
    #文章可以使用markdown/rst格式
    vim source/hello.rst
    hello, world
 ```
 ### 1.5 修改index
-```shell
+```
 
   $ vim source/index.rst
     Welcome to docs's documentation!
@@ -178,7 +178,7 @@ $ tree -C .
 
 ### 1.6 修改配置
 
-```python
+```
 $ vim source/config.py
 #更改主题为sphinx_rtd_theme
 import sphinx_rtd_theme
@@ -196,7 +196,7 @@ source_suffix = ['.rst', '.md']
 
 ### 1.7 Make HTML
 
-```shell
+```
 make html #生成html文件
 ```
 
